@@ -1,18 +1,14 @@
-import { useNavigate } from 'react-router-dom';
-import Button from './Button';
+import { useNavigate } from 'react-router-dom'
 
-const Header = ({ title }) => {
-  const navigate = useNavigate();
+export default function Header() {
+  const navigate = useNavigate()
   
   return (
-    <header className="app-header">
-      <Button variant="icon" onClick={() => navigate(-1)}>
-        <i className="material-icons">arrow_back</i>
-      </Button>
-      <h1 className="header-title">{title}</h1>
-      <div className="header-spacer"></div>
+    <header className="header">
+      <button onClick={() => navigate(-1)} className="back-button">
+        &lt; Back
+      </button>
+      <h1 className="title">Mobile App</h1>
     </header>
-  );
-};
-
-export default Header;
+  )
+}
